@@ -1,0 +1,41 @@
+--TOPIC 1
+--ASSIGNMENT1
+--A.DECLARE iNumber NUMBER(4); is valid declarations as per PL/SQL syntax.
+--B.NULL. As no initialization or assignment is made.
+--C.ElectronicCity
+--Talent TransformationCTE
+
+--ASSIGNMENT2
+
+/*A.*/
+DECLARE
+iFirst POSITIVE:=&iFirst;
+iSecond POSITIVE:=&iSecond;
+res NUMBER;
+BEGIN
+res:=(iFirst * iSecond/iSecond);
+DBMS_OUTPUT.PUT_LINE('result '||res);
+END;
+
+/*B.*/
+VARIABLE MAX_SALARY NUMBER; 
+VARIABLE MIN_SALARY NUMBER;
+DECLARE
+DEPT_NO NUMBER:=&DEPT_NO;
+BEGIN
+SELECT MAX(SALARY),MIN(SALARY) 
+INTO :MAX_SALARY,:MIN_SALARY
+FROM EMPLOYEES 
+WHERE department_id=DEPT_NO;
+END;
+PRINT MAX_SALARY MIN_SALARY;
+
+/*C.*/
+VARIABLE VAR1 NUMBER; 
+VARIABLE VAR2 NUMBER;
+DECLARE
+BEGIN
+:VAR1:=&V1;
+:VAR2:=&V2;
+END;
+PRINT VAR1 VAR2;
